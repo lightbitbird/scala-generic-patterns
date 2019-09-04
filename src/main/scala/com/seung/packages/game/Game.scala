@@ -1,6 +1,6 @@
-package com.seung.marubatsu.game
+package com.seung.packages.game
 
-import com.seung.marubatsu.board.{Board, Empty, Maru => MaruState, Batsu => BatsuState}
+import com.seung.packages.board.{Board, Empty, Maru => MaruState, Batsu => BatsuState}
 
 
 sealed abstract class Winner

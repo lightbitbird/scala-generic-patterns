@@ -1,6 +1,6 @@
-package com.seung.marubatsu
+package com.seung.packages
 
-import com.seung.marubatsu.board.{CellState, Empty, Maru => MaruState, Batsu => BatsuState}
+import com.seung.packages.board.{CellState, Empty, Maru => MaruState, Batsu => BatsuState}
 
 package object game {
 

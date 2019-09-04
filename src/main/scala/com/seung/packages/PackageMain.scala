@@ -1,9 +1,9 @@
-package com.seung.marubatsu
+package com.seung.packages
 
-import com.seung.marubatsu.game.Game
-import com.seung.marubatsu.board.Board
+import com.seung.packages.game.Game
+import com.seung.packages.board.Board
 
-object Main extends App {
+object PackageMain extends App {
   val b = Board()
   b.put(0, 0).put(0, 1)
   println(b)

@@ -1,15 +1,16 @@
-package com.seung.marubatsu.board
+package com.seung.packages.board
 
-sealed abstract class CellState
+private[packages] sealed abstract class CellState
 
-case object Empty extends CellState
+private[packages] case object Empty extends CellState
 
-case object Maru extends CellState
+private[packages] case object Maru extends CellState
 
-case object Batsu extends CellState
+private[packages] case object Batsu extends CellState
 
-class Board(val cells: Map[(Int, Int), CellState], val cell: CellState) {
-  def put(row: Int, column: Int): Board = {
+private[packages] class Board(private[packages] val cells: Map[(Int, Int), CellState],
+                              private[packages] val cell: CellState) {
+  private[packages] def put(row: Int, column: Int): Board = {
     new Board(cells + ((row, column) -> cell), getNext(cell))
   }
 

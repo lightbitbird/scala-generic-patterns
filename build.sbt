@@ -1,4 +1,4 @@
-name := "scala-grammar"
+name := "scala-generic-patterns"
 
 version := "0.1"
 
