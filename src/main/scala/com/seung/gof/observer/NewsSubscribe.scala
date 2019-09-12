@@ -88,12 +88,8 @@ class GenerateNews() extends Observable[NewsTask, Subscriber, GenerateNews] {
   }
 
   def notifyObservers(tasks: Seq[NewsTask]): Unit = {
-    if (this.changed.isDefined) {
-      this.changed match {
-        case Some(s) if s =>
-          tasks.foreach(notifyMessage)
-      }
-    }
+    if (this.changed.isDefined && this.changed.get)
+      tasks.foreach(notifyMessage)
   }
 
   def deleteObserver(sub: Subscriber): Unit = {
