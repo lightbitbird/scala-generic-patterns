@@ -1,12 +1,12 @@
 package typeparameters
 
-import com.seung.typeparameters.{EmptyStack, Stack}
+import com.seung.typeparameters.{EmptyStackOrg$, StackOrg}
 import org.scalatest.{DiagrammedAssertions, FlatSpec}
 
-class StackSpec extends FlatSpec with DiagrammedAssertions {
+class OrgStackSpec extends FlatSpec with DiagrammedAssertions {
 
   "Stack" should "FILO" in {
-    val stack = Stack()
+    val stack = StackOrg()
     val stackPushed1 = stack.push(1)
     val stackPushed2 = stackPushed1.push(2)
     val (popped2, stackPopped2) = stackPushed2.pop
@@ -14,11 +14,11 @@ class StackSpec extends FlatSpec with DiagrammedAssertions {
 
     assert(popped2 === 2)
     assert(popped1 === 1)
-    assert(stackPopped1 === EmptyStack)
+    assert(stackPopped1 === EmptyStackOrg$)
   }
 
   "isEmpty function" should "whether return empty or not" in {
-    val stack = Stack()
+    val stack = StackOrg()
     assert(stack.isEmpty === true)
     val stackPushed1 = stack.push(1)
     assert(stackPushed1.isEmpty === false)
@@ -28,7 +28,7 @@ class StackSpec extends FlatSpec with DiagrammedAssertions {
 
   "EmptyStack" should "throw an exception when it pops" in {
     intercept[IllegalArgumentException] {
-      Stack().pop
+      StackOrg().pop
     }
   }
 }
